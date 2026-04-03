@@ -1,9 +1,6 @@
 @import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap');
 
-/* =========================
-   GLOBAL
-========================= */
-
+/* GLOBAL */
 * {
     box-sizing: border-box;
     margin: 0;
@@ -12,21 +9,18 @@
 
 body {
     font-family: 'Poppins', sans-serif;
-    color: #f1f1f1;
+    color: #e6f0ff;
 
-    /* BACKGROUND IMAGE (LOKAAL) */
+    /* BACKGROUND */
     background:
-        linear-gradient(rgba(8,10,18,0.88), rgba(8,10,18,0.92)),
-        url("../background.png") no-repeat center center fixed;
+        linear-gradient(rgba(5,10,25,0.9), rgba(5,10,25,0.95)),
+        url("background.png") no-repeat center center fixed;
 
     background-size: cover;
     line-height: 1.6;
 }
 
-/* =========================
-   HEADER
-========================= */
-
+/* HEADER */
 header {
     display: flex;
     justify-content: space-between;
@@ -34,10 +28,10 @@ header {
 
     padding: 18px 50px;
 
-    background: rgba(10, 12, 20, 0.85);
+    background: rgba(10, 18, 40, 0.85);
     backdrop-filter: blur(10px);
 
-    border-bottom: 1px solid rgba(255, 70, 70, 0.4);
+    border-bottom: 1px solid rgba(30,144,255,0.3);
 }
 
 header .logo {
@@ -51,34 +45,28 @@ header .logo img {
 }
 
 header .logo h2 {
-    color: #ff4d4d;
+    color: #4da6ff;
     font-weight: 600;
-    letter-spacing: 1px;
 }
 
-/* =========================
-   NAVBAR
-========================= */
-
+/* NAVBAR */
 nav {
-    background: rgba(10, 12, 20, 0.85);
+    background: rgba(10, 18, 40, 0.85);
     text-align: center;
     padding: 14px;
 
-    border-bottom: 1px solid rgba(255, 70, 70, 0.3);
+    border-bottom: 1px solid rgba(30,144,255,0.25);
 }
 
 nav a {
-    color: #f1f1f1;
+    color: #cfe6ff;
     margin: 0 18px;
     text-decoration: none;
     font-weight: 500;
-
     position: relative;
     transition: 0.3s;
 }
 
-/* underline animation */
 nav a::after {
     content: "";
     position: absolute;
@@ -86,7 +74,7 @@ nav a::after {
     bottom: -5px;
     width: 0%;
     height: 2px;
-    background: #ff4d4d;
+    background: #1e90ff;
     transition: 0.3s;
 }
 
@@ -95,29 +83,25 @@ nav a:hover::after {
 }
 
 nav a:hover {
-    color: #ff4d4d;
+    color: #1e90ff;
 }
 
 nav a.active {
-    color: #ff4d4d;
-    border-bottom: 2px solid #ff4d4d;
+    color: #1e90ff;
+    border-bottom: 2px solid #1e90ff;
     padding-bottom: 4px;
 }
 
-/* =========================
-   HERO
-========================= */
-
+/* HERO */
 .hero {
     padding: 140px 20px;
     text-align: center;
 }
 
 .hero h1 {
-    font-size: 58px;
-    font-weight: 700;
-    color: #ff4d4d;
-    text-shadow: 0 0 25px rgba(255,77,77,0.6);
+    font-size: 56px;
+    color: #4da6ff;
+    text-shadow: 0 0 25px rgba(30,144,255,0.5);
     margin-bottom: 20px;
 }
 
@@ -125,45 +109,38 @@ nav a.active {
     max-width: 750px;
     margin: auto;
     font-size: 18px;
-    color: #e5e7eb;
+    color: #dbeafe;
 }
 
-/* =========================
-   CARDS
-========================= */
-
+/* CARDS */
 .card {
     max-width: 900px;
     margin: 60px auto;
     padding: 45px;
 
-    background: rgba(17, 24, 39, 0.92);
+    background: rgba(15, 25, 50, 0.92);
     border-radius: 14px;
 
-    border: 1px solid rgba(255, 77, 77, 0.35);
+    border: 1px solid rgba(30,144,255,0.3);
 
     box-shadow: 0 15px 50px rgba(0,0,0,0.6);
 
-    transition: 0.3s ease;
+    transition: 0.3s;
 }
 
 .card:hover {
     transform: translateY(-6px);
-    box-shadow: 0 0 45px rgba(255,77,77,0.25);
+    box-shadow: 0 0 45px rgba(30,144,255,0.25);
 }
 
-/* =========================
-   TEXT
-========================= */
-
+/* TEXT */
 h1, h2, h3 {
-    color: #ff4d4d;
+    color: #4da6ff;
     margin-bottom: 15px;
 }
 
 p, li {
-    color: #e5e7eb;
-    font-size: 16px;
+    color: #dbeafe;
 }
 
 ul {
@@ -174,15 +151,12 @@ li {
     margin-bottom: 8px;
 }
 
-/* =========================
-   BUTTONS
-========================= */
-
+/* BUTTONS */
 button, .cta-btn {
     display: inline-block;
 
-    background: linear-gradient(135deg, #ff4d4d, #ff1a1a);
-    color: #fff;
+    background: linear-gradient(135deg, #1e90ff, #3aa0ff);
+    color: #0a0f1c;
 
     padding: 14px 32px;
     border-radius: 8px;
@@ -196,24 +170,20 @@ button, .cta-btn {
     transition: 0.3s;
 }
 
-/* hover */
 button:hover, .cta-btn:hover {
     transform: scale(1.05);
-    box-shadow: 0 0 25px rgba(255,77,77,0.6);
+    box-shadow: 0 0 25px rgba(30,144,255,0.6);
 }
 
-/* =========================
-   FOOTER
-========================= */
-
+/* FOOTER */
 footer {
     text-align: center;
     padding: 30px;
 
     margin-top: 80px;
 
-    background: rgba(10, 12, 20, 0.95);
-    border-top: 1px solid rgba(255,77,77,0.4);
+    background: rgba(10, 18, 40, 0.95);
+    border-top: 1px solid rgba(30,144,255,0.3);
 }
 
 .credit {
