@@ -5,10 +5,57 @@
   box-sizing: border-box;
 }
 
+/* ROOT COLORS */
+:root {
+  --primary: #1E90FF;
+  --dark: #050D1F;
+  --glass: rgba(255,255,255,0.05);
+}
+
+/* BODY */
 body {
   font-family: 'Segoe UI', sans-serif;
-  background: #050D1F;
   color: white;
+  background: var(--dark);
+  overflow-x: hidden;
+}
+
+/* BACKGROUND SYSTEM */
+body::before {
+  content: "";
+  position: fixed;
+  width: 100%;
+  height: 100%;
+  z-index: -2;
+  background-size: cover;
+  background-position: center;
+  transition: 0.5s;
+}
+
+body::after {
+  content: "";
+  position: fixed;
+  width: 100%;
+  height: 100%;
+  background: linear-gradient(rgba(5,13,31,0.95), rgba(5,13,31,0.7));
+  z-index: -1;
+}
+
+/* PAGINA BACKGROUNDS */
+.home-page::before {
+  background-image: url('/assets/images/home.jpg');
+}
+
+.about-page::before {
+  background-image: url('/assets/images/about.jpg');
+}
+
+.rules-page::before {
+  background-image: url('/assets/images/rules.jpg');
+}
+
+.team-page::before {
+  background-image: url('/assets/images/team.jpg');
 }
 
 /* NAVBAR */
@@ -19,46 +66,58 @@ body {
   justify-content: space-between;
   align-items: center;
   padding: 20px 60px;
-  backdrop-filter: blur(10px);
-  background: rgba(10, 25, 60, 0.6);
-  z-index: 1000;
+  backdrop-filter: blur(15px);
+  background: rgba(10,20,50,0.6);
+  border-bottom: 1px solid rgba(255,255,255,0.1);
 }
 
 .logo {
   font-size: 24px;
   font-weight: bold;
-  color: #1E90FF;
+  color: var(--primary);
 }
 
 nav a {
   margin: 0 15px;
-  text-decoration: none;
   color: white;
+  text-decoration: none;
+  position: relative;
+}
+
+nav a::after {
+  content: "";
+  position: absolute;
+  width: 0%;
+  height: 2px;
+  background: var(--primary);
+  left: 0;
+  bottom: -5px;
   transition: 0.3s;
 }
 
-nav a:hover {
-  color: #1E90FF;
+nav a:hover::after {
+  width: 100%;
 }
 
 /* BUTTONS */
 .btn-primary {
   background: linear-gradient(45deg, #1E90FF, #00BFFF);
   padding: 10px 25px;
-  border-radius: 8px;
+  border-radius: 10px;
   text-decoration: none;
   color: white;
   transition: 0.3s;
 }
 
 .btn-primary:hover {
-  transform: scale(1.05);
+  transform: scale(1.08);
+  box-shadow: 0 0 20px #1E90FF;
 }
 
 .btn-secondary {
-  border: 1px solid #1E90FF;
+  border: 1px solid var(--primary);
   padding: 10px 25px;
-  border-radius: 8px;
+  border-radius: 10px;
   text-decoration: none;
   color: white;
 }
@@ -66,36 +125,32 @@ nav a:hover {
 /* HERO */
 .hero {
   height: 100vh;
-  background: url('../assets/images/bg.jpg') center/cover;
   display: flex;
   justify-content: center;
   align-items: center;
-  position: relative;
-}
-
-.overlay {
-  position: absolute;
-  width: 100%;
-  height: 100%;
-  background: linear-gradient(#050D1F, rgba(5,13,31,0.6));
 }
 
 .hero-content {
-  position: relative;
   text-align: center;
+  animation: fadeUp 1s ease forwards;
 }
 
 .hero h1 {
   font-size: 70px;
-  margin-bottom: 20px;
 }
 
 .hero p {
+  margin: 20px 0;
   font-size: 20px;
-  margin-bottom: 30px;
 }
 
-/* FEATURES */
+.hero-buttons {
+  display: flex;
+  gap: 20px;
+  justify-content: center;
+}
+
+/* CARDS */
 .features {
   display: flex;
   justify-content: center;
@@ -103,15 +158,26 @@ nav a:hover {
   padding: 100px 20px;
 }
 
-.feature {
-  background: rgba(255,255,255,0.05);
-  backdrop-filter: blur(10px);
+.card {
+  background: var(--glass);
+  backdrop-filter: blur(15px);
   padding: 40px;
   border-radius: 15px;
-  width: 250px;
   transition: 0.3s;
 }
 
-.feature:hover {
-  transform: translateY(-10px);
+.card:hover {
+  transform: translateY(-10px) scale(1.03);
+}
+
+/* ANIMATIONS */
+@keyframes fadeUp {
+  from {
+    opacity: 0;
+    transform: translateY(40px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
 }
