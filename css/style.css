@@ -11,10 +11,10 @@ body {
     font-family: 'Poppins', sans-serif;
     color: #e6f0ff;
 
-    /* BACKGROUND */
+    /* BACKGROUND (correct voor subfolders) */
     background:
         linear-gradient(rgba(5,10,25,0.9), rgba(5,10,25,0.95)),
-        url("background.png") no-repeat center center fixed;
+        url("../background.png") no-repeat center center fixed;
 
     background-size: cover;
     line-height: 1.6;
