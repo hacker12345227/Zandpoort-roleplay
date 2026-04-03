@@ -5,51 +5,31 @@
   box-sizing: border-box;
 }
 
-/* ROOT */
-:root {
-  --primary: #1E90FF;
-  --dark: #050D1F;
-}
-
-/* BODY */
+/* BASIS */
 body {
-  font-family: 'Segoe UI', sans-serif;
+  font-family: Arial, sans-serif;
   color: white;
-  background: var(--dark);
-  overflow-x: hidden;
+  background: #050D1F;
 }
 
-/* =========================
-   BACKGROUND SYSTEM
-========================= */
-
-/* IMAGE */
+/* BACKGROUND SYSTEM */
 body::before {
   content: "";
   position: fixed;
   width: 100%;
   height: 100%;
   z-index: -2;
-
   background-size: cover;
   background-position: center;
-  background-repeat: no-repeat;
-
-  transition: 0.5s;
 }
 
-/* OVERLAY */
 body::after {
   content: "";
   position: fixed;
   width: 100%;
   height: 100%;
   z-index: -1;
-
-  background: linear-gradient(
-    rgba(5,13,31,0.9),
-    rgba(5,13,31,0.7)
-  );
+  background: linear-gradient(rgba(5,13,31,0.95), rgba(5,13,31,0.7));
 }
 
 /* PAGINA BACKGROUNDS */
@@ -58,109 +38,96 @@ body::after {
 }
 
 .about-page::before {
-  background-image: url('../assets/images/over.jpg');
+  background-image: url('../assets/images/about.jpg');
 }
 
 .rules-page::before {
-  background-image: url('../assets/images/regels.jpg');
+  background-image: url('../assets/images/rules.jpg');
 }
 
 .team-page::before {
   background-image: url('../assets/images/team.jpg');
 }
 
-/* =========================
-   NAVBAR
-========================= */
-
+/* NAVBAR */
 .navbar {
   position: fixed;
   width: 100%;
-  padding: 20px 50px;
-
+  padding: 20px 60px;
   display: flex;
   justify-content: space-between;
-  align-items: center;
-
-  backdrop-filter: blur(12px);
-  background: rgba(10,20,50,0.6);
-
-  border-bottom: 1px solid rgba(255,255,255,0.1);
-}
-
-.logo {
-  font-size: 22px;
-  font-weight: bold;
-  color: var(--primary);
+  backdrop-filter: blur(10px);
+  background: rgba(0,0,0,0.5);
 }
 
 nav a {
   margin: 0 15px;
-  text-decoration: none;
   color: white;
-  position: relative;
-}
-
-/* underline animatie */
-nav a::after {
-  content: "";
-  position: absolute;
-  width: 0%;
-  height: 2px;
-  background: var(--primary);
-  left: 0;
-  bottom: -5px;
-  transition: 0.3s;
-}
-
-nav a:hover::after {
-  width: 100%;
+  text-decoration: none;
 }
 
 /* BUTTON */
-.btn-primary {
-  background: linear-gradient(45deg, #1E90FF, #00BFFF);
-  padding: 10px 25px;
-  border-radius: 10px;
+.btn {
+  background: #1E90FF;
+  padding: 10px 20px;
+  border-radius: 6px;
   text-decoration: none;
   color: white;
-  transition: 0.3s;
 }
 
-.btn-primary:hover {
-  transform: scale(1.05);
-  box-shadow: 0 0 15px #1E90FF;
+.btn-outline {
+  border: 1px solid white;
+  padding: 10px 20px;
+  text-decoration: none;
+  color: white;
 }
 
 /* HERO */
 .hero {
   height: 100vh;
   display: flex;
-  justify-content: center;
   align-items: center;
+  justify-content: center;
 }
 
-.hero-content {
+.hero-inner {
   text-align: center;
-  animation: fadeUp 1s ease;
+  max-width: 700px;
 }
 
 .hero h1 {
-  font-size: 60px;
+  font-size: 70px;
+  margin-bottom: 20px;
 }
 
 .hero p {
-  margin: 20px 0;
+  font-size: 20px;
+  margin-bottom: 30px;
 }
 
-/* ANIMATIE */
-@keyframes fadeUp {
-  from {
-    opacity: 0;
-    transform: translateY(40px);
-  }
-  to {
-    opacity: 1;
-    transform: translateY(0);
-  }
+/* CONTENT BLOCK */
+.content-block {
+  padding: 120px 20px;
+  text-align: center;
+}
+
+.container {
+  max-width: 800px;
+  margin: auto;
+}
+
+/* GRID */
+.grid {
+  display: flex;
+  justify-content: center;
+  gap: 40px;
+  padding: 100px 20px;
+}
+
+.grid-item {
+  max-width: 250px;
+}
+
+.grid-item h3 {
+  margin-bottom: 10px;
 }
